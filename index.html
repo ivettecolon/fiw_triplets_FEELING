@@ -19,6 +19,8 @@
     <script src="https://unpkg.com/@jspsych/plugin-video-button-response@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych/plugin-video-keyboard-response@1.1.1"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+          <script src="https://unpkg.com/@jspsych/plugin-free-sort@1.0.3"></script>
+
 
 
 
@@ -477,6 +479,23 @@
       
       
       timeline.push(block_procedure);
+      
+      
+           // circle trial definition
+    var sort_trial = {
+        type: jsPsychFreeSort,
+        stimuli: function(){
+            let new_array = [];
+            new_array = faces_arr.splice(0, 24);
+            return new_array;
+        },
+        stim_height: 100,
+        stim_width: 125,
+        scale_factor: 3,
+        prompt: "<p>Click and drag the images below to sort them so that the items <strong>similar in MOVEMENT</strong> are close together.</p>"
+    };
+      timeline.push(sort_trial);
+      
 
 
 
