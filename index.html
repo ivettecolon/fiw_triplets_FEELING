@@ -41,9 +41,9 @@
         },
         on_finish: function(){
             jsPsych.data.addProperties({worker_id: urlvar.workerId});
-            //saveData(file, jsPsych.data.get().csv());
-            save_data;
-
+            jsPsych.data.addProperties({condition: "feeling"});
+            timeline.push(save_data);
+            window.location.assign("https://uwmadison.sona-systems.com/webstudy_credit.aspx?experiment_id=2116&credit_token=7aa7f2f5b405459985ef74728f89bc83&survey_code="+urlvar.workerId);
         },
         max_load_time: 120000
     });
